@@ -1,0 +1,68 @@
+﻿<Window x:Class="CourseWork_Storage.StorerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CourseWork_Storage"
+        mc:Ignorable="d"
+        
+        Title="Склад" Height="450" Width="800" Background="Azure">
+    <Grid>
+        <Menu Height="20" VerticalAlignment="Top" Margin="0,1,0,0" Background="Aqua">
+            <MenuItem Header="Файл">
+                <StackPanel>
+                    <Button x:Name="ProductList" Height="20" Width="115" Content="Вывод продукции" Margin="-30,0,0,0" Click="Button_ProductList"/>
+                </StackPanel>
+                <StackPanel>
+                    <Button x:Name="CatalogList" Height="20" Width="115" Content="Каталог продукции" Margin="-30,0,0,0" Click="Button_CatalogList" />
+                </StackPanel>
+                <StackPanel>
+                    <Button x:Name="Exit" Content="Выход" Height="20" Width="115" Margin="-30,0,0,0" Click="Button_Exit"/>
+                </StackPanel>
+            </MenuItem>
+            <MenuItem Header="Справка"/>
+        </Menu>
+        <TabControl HorizontalAlignment="Left" Height="380" Margin="0,0,0,10" VerticalAlignment="Bottom" Width="792">
+            <TabItem Header=" Список продукции">
+                <Grid Background="White" Margin="0,18,0,0">
+                    <DataGrid x:Name="DataGrid" AutoGenerateColumns="True" HorizontalAlignment="Left" Height="310" Margin="10,10,0,0" VerticalAlignment="Top" Width="762"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Заявки">
+                <Grid Background="White">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="28*"/>
+                        <ColumnDefinition Width="168*"/>
+                        <ColumnDefinition Width="6*"/>
+                        <ColumnDefinition Width="51*"/>
+                        <ColumnDefinition Width="39*"/>
+                        <ColumnDefinition Width="494*"/>
+                    </Grid.ColumnDefinitions>
+                    <DataGrid x:Name="DataGrid5" HorizontalAlignment="Left" Height="242" VerticalAlignment="Top" Width="398" Margin="10,10,0,0" Grid.ColumnSpan="6"/>
+                    <DataGrid x:Name="DataGrid6" HorizontalAlignment="Left" Height="242" Margin="146.8,10,0,0" VerticalAlignment="Top" Width="336" Grid.Column="5"/>
+                    <Button Content="Просмотреть Заказы" HorizontalAlignment="Left" Margin="102,280,0,0" VerticalAlignment="Top" Width="144" Height="22" Grid.ColumnSpan="4" Click="OrderView_Click" Grid.Column="1"/>
+                    <TextBox x:Name="tbStatementID" Grid.Column="5" HorizontalAlignment="Left" Height="22" Margin="146.8,280,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="44" RenderTransformOrigin="0.493,0.896"/>
+                    <Button Content="Просмотр Заявки" Grid.Column="5" HorizontalAlignment="Left" Margin="219.8,280,0,0" VerticalAlignment="Top" Width="120" Height="22" Click="StatementView_Click"/>
+                    <Label Content="ID Заказа" Grid.Column="5" HorizontalAlignment="Left" Margin="146.8,257,0,0" VerticalAlignment="Top" Width="65" Height="36"/>
+                    <Button x:Name="btPrintStatement" Content="Печать Заявки" Grid.Column="5" HorizontalAlignment="Left" Margin="362.8,280,0,0" VerticalAlignment="Top" Width="120" Height="22"/>
+                    <ComboBox x:Name="cbStatementID" Grid.Column="5" HorizontalAlignment="Left" Margin="190.8,280,0,0" VerticalAlignment="Top" Width="24" SelectionChanged="CbStatementID_SelectionChanged"/>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Распределение товара">
+                <Grid>
+                    <DataGrid x:Name="DataGrid10" HorizontalAlignment="Left" Height="321" VerticalAlignment="Top" Width="396" Margin="145,0,0,0"/>
+                    <DataGrid x:Name="DataGrid11" HorizontalAlignment="Left" Height="321" Margin="532,0,0,0" VerticalAlignment="Top" Width="196"/>
+                    <Button x:Name="bt1" Content="" Margin="24,138,714.4,185.8" Click="Button_Click"/>
+                    <Label Content="Распределить&#xD;&#xA;товар&#xD;&#xA;по новым адресам&#xD;&#xA;хранения" Height="100" Margin="24,33,646.4,219.8"/>
+                </Grid>
+
+            </TabItem>
+
+
+
+
+
+        </TabControl>
+    </Grid>
+</Window>
